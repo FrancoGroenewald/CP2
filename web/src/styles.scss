@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+/* 
+// CSS3 Flexbox Holy Grail Layout
+// Made with ❤ by @ImDigamberSingh
+// https://www.positronx.io
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+app-main,
+app-sidebar,
+
+
+app-main,
+app-privacy-policy {
+  order: 3;
+  flex: 1;
+  min-height: 500px;
+  background: rgb(211, 216, 215);
+}
+
+app-sidebar {
+  order: 4;
+  flex: 0 1 200px;
+  background: rgb(149, 180, 216);
+}
+
+@media (max-width: 768px) {
+  app-header, 
+  app-nav, 
+  app-main, 
+  app-aside, 
+  app-footer {
+    flex: unset;
+    width: 100%;
+  }
+}
