@@ -1,0 +1,19 @@
+#outerCard {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logInCard {
+    height: 50%;
+    width: 30%;
+}
+
+mat-form-field {
+    width: 60%;
+}
+
+mat-spinner {
+    margin: auto;
+}
