@@ -4,8 +4,8 @@
         <img src='assets/images/logo5.png' width="400px" />
         <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
             <mat-form-field>
-                <input matInput  type="text" name="email" ngModel id="" placeholder="Email" #emailInput="ngModel" required>
-                <mat-error *ngIf="emailInput.invalid">Please enter valid email</mat-error>
+                <input matInput  type="text" name="user" ngModel id="" placeholder="Email" #userInput="ngModel" required>
+                <mat-error *ngIf="userInput.invalid">Please enter valid email</mat-error>
             </mat-form-field>
             <mat-form-field>
                 <input matInput type="password" name="password" ngModel id="" placeholder="Password" #passwordInput="ngModel" required>

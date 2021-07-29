@@ -15,15 +15,22 @@ type Claims struct {
 	jwt.StandardClaims
 }
 
+type User struct {
+	User     string `query:"user"`
+	Password string `query:"password"`
+}
+
 func Login(c *fiber.Ctx) error {
-	var data map[string]string
-	if err := c.BodyParser(&data); err != nil {
+
+	user := new(User)
+
+	if err := c.QueryParser(user); err != nil {
 		return err
 	}
 
 	result := make(map[string]interface{})
 	var claimsReturn interface{}
-	if err := appConfig.DB.Raw("exec [PractiseDatabase].[dbo].[spLogin] ?, ?", data["user"], data["password"]).Scan(&result); err != nil {
+	if err := appConfig.DB.Raw("exec [PractiseDatabase].[dbo].[spLogin] ?, ?", user.User, user.Password).Scan(&result); err != nil {
 		log.Flags()
 	}
 
